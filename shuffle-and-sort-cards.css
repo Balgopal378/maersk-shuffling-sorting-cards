@@ -1,0 +1,121 @@
+:root {
+    --main-bg-color: #EFEFEF;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --button-bg-color: #72C3DC;
+    --button-border-bottom-color: #2B8EAD;
+  }
+header {
+    text-align: center;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-weight: 800;
+}
+.container {
+    display: grid;
+    max-width: 100%;
+}
+.mainConatiner {
+    height: 80vh;
+    background: var(--white-color);
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    grid-template-columns: 1fr;
+}
+
+#gridContainer {
+    max-width: inherit;
+    height: initial;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 6px;
+    padding: 10px;
+}
+  
+button {
+    margin: 8px;
+    height: 50px;
+    width: 100px;
+    max-width: 100%;
+    background-color: var(--button-bg-color);
+    border: none;
+    color: var(--white-color);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    border-bottom: 5px solid var(--button-border-bottom-color);
+    outline:none;
+}
+
+button:active {
+  box-shadow: 0 2px var(--button-border-bottom-color);
+  transform: translateY(1px);
+}
+
+.gridValues {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.buttonContainer{
+    grid-row-start:1;
+    grid-row-end:2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+}
+  
+@media screen and (min-width: 375px) {
+    header {
+        text-align: center;
+        background-color: var(--white-color);;
+        color: var(--black-color);
+    }
+    .mainConatiner {
+        background: var(--main-bg-color);
+        grid-template-rows: 1fr 6fr;
+        grid-template-columns: 2fr 1fr;
+    }
+    #gridContainer{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-row-start:1;
+        grid-row-end:3;
+        grid-gap: 0px;
+        padding: 0px;
+        height: calc(100% - 50px);
+    }
+
+    .gridValues {
+        font-size: 5rem;
+    }
+    
+    .buttonContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        width: 95%;
+    }
+
+    .container {
+        background-color: var(--main-bg-color);
+        box-sizing: border-box;
+        padding-bottom: 10px;
+
+    }
+}
